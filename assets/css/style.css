@@ -4,3 +4,17 @@ body{
     background-attachment: fixed;
     background-position:center;
 }
+
+.jumbotron{
+    background-color:black;
+    opacity: 1%;
+    color:white;
+    margin-top: 40%;
+    margin-bottom: 0%;
+    
+}
+
+.openingImage{
+    margin-left: 35%;
+}
+
