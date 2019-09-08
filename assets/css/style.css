@@ -1,7 +1,6 @@
 body{
     background-image: url("../images/The\ Office\ Logo\ and\ 5\ Main\ Characters.png");
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position:center;
 }
 
@@ -10,11 +9,13 @@ body{
     opacity: 1%;
     color:white;
     margin-top: 40%;
-    margin-bottom: 0%;
+   
     
 }
 
 .openingImage{
+    padding-top: 5%;
     margin-left: 35%;
 }
+
 

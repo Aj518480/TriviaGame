@@ -21,12 +21,32 @@ var questionTen ="";
 // Need a variable to track the users correct and wrong answers
 var userResults;
 
+
 // String will pop up if user gets question right ot wrong
 var thatsRight ="That's what she said"
 var thatsWrong ="Dwight,You Ignorant Slut!"
 
-//Going to need a timer for each question for about 15-20 seconds
+//Make a variable for the showing the timer on display
+//needs to be a number not a string
+var userTimer = 0;
+
+//if the user answers the wrong answer display a timer for 20 seconds
+var timeRemaining=0;
+
 //Going to need link Jquery to Html for the paragrah for the questions and to the buttons for the answers
+function triviaBoard() {
+       
+    $("#choiceA").text(choiceA);
+    $("#choiceB").text(choiceB);
+    $("#choiceC").text(choiceC);
+    $("#choiceD").text(choiceD);
+    $("#questions").text();
+    $("userTimer").text(userTimer);
+
+};
+triviaBoard();
+//Going to need a timer for each question for about 15-20 seconds
+
 // Going to need a place to link the gifs for the correct and wrong gifs
 //Need to make an onclick function for when the user clicks on the buttons with if statements of === or not !==
 //make sure it is including the user is === to put including the gif make thats right! is within the timers time frame. results with go up 1
