@@ -2,6 +2,7 @@ body{
     background-image: url("../images/The\ Office\ Logo\ and\ 5\ Main\ Characters.png");
     background-repeat: no-repeat;
     background-position:center;
+    
 }
 
 .jumbotron{
@@ -13,7 +14,7 @@ body{
     
 }
 
-.openingImage{
+.imagesOrGifs{
     padding-top: 5%;
     margin-left: 35%;
 }

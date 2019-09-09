@@ -7,24 +7,25 @@ var choiceD;
 
 //Make a var for each question so make each a var to be a string
 // Need to figure out to connect the right answers to the question variable
-var questionOne ="";
-var questionTwo ="";
-var questionThree ="";
-var questionFour ="";
-var questionFive ="";
-var questionSix ="";
-var questionSeven ="";
-var questionEight ="";
-var questionNine ="";
-var questionTen ="";
+var questionOne ="What is Gabe's Middle Name?";
+var questionTwo ="Who is the Office Notary?";
+var questionThree ="What are Oscars brain foods?";
+var questionFour ="What is the name of Toby's True Crime Podcast?";
+var questionFive ="In Threat Level Midnight'how many times does Michael Scran say he is going to toss the coin to determine whether he take the mission from the president?'";
+var questionSix ="What ingredient should one undercook to make the perfect Malone chili?";
+var questionSeven ="Dwight Schrute plays which of the following musical instruments?";
+var questionEight ="Which character is NOT chosen for Michael's basketball team in their match against the warehouse?";
+var questionNine ="What is the name of the Scanton Strangler?";
+var questionTen ="What is the number of Kevin invents to compensate for his accounting errors?";
 
 // Need a variable to track the users correct and wrong answers
 var userResults;
-
+// Going to need a place to link the gifs for the correct and wrong gifs
+var imagesOrGifs;
 
 // String will pop up if user gets question right ot wrong
 var thatsRight ="That's what she said"
-var thatsWrong ="Dwight,You Ignorant Slut!"
+var thatsWrong ="That's not what she said"
 
 //Make a variable for the showing the timer on display
 //needs to be a number not a string
@@ -42,14 +43,28 @@ function triviaBoard() {
     $("#choiceD").text(choiceD);
     $("#questions").text();
     $("userTimer").text(userTimer);
-
+    $("imagesOrGifs").text(imagesOrGifs);
+// Going to need a place to link the gifs for the correct and wrong gifs
 };
 triviaBoard();
+
+
+
 //Going to need a timer for each question for about 15-20 seconds
 
-// Going to need a place to link the gifs for the correct and wrong gifs
+//NOTES TO SELF
+//<button onclick="setTimeout(myFunction, 3000)*5);"></button> (MIGHT BE GOOD TO USE FOR THE CHOICES THE USER HAS)
+//clearTimeout(myVar) (GOOD TO USE ONCE THE USER CLICKS THE RIGHT ANSWER)
+//myVar = setTimeout(myFunction, 3000) (SETS A NORMAL TIMER FOR 3 SECONDS)
+
+
 //Need to make an onclick function for when the user clicks on the buttons with if statements of === or not !==
 //make sure it is including the user is === to put including the gif make thats right! is within the timers time frame. results with go up 1
+
+//$("#choiceA").on("click",function(){}
+//$("#choiceB").on("click",function(){}
+//$("#choiceC").on("click",function(){}
+//$("#choiceD").on("click",function(){}
 
 
 
