@@ -1,123 +1,107 @@
-var timer;
-//Make vars to put in the buttons, to make the user choose different answers
-var choiceA;
-var choiceB;
-var choiceC;
-var choiceD;
 
-//Make a var for each question so make each a var to be a string
-// Need to figure out to connect the right answers to the question variable
+//Make a variable for a timer
+
+
+var timer;
+
+
+//Make a var for each question with properties and values of answers,correct answers,image or gifs
+// Going to need a place to link the gifs for the correct and wrong gifs
 var questions=[
     {
-question:"What is Gabe's Middle Name?";
-answer:["Sam","Susan","Seth","Sharon"];
-correctAnswer:"Susan";
-Image: URL()
+question1:"What is Gabe's Middle Name?",
+answer:["Sam","Susan","Seth","Sharon"],
+correctAnswer:"Susan",
+Image: url=("../images/gabe.jpeg"),
 
     },
 
     {
-question ="Who is the Office Notary?";
-answer:["Toby","Angela","Dwight,Oscar"];
-correctAnswer:"Dwight";
-Image: URL()
+question2:"Who is the Office Notary?",
+answer:["Toby","Angela","Dwight,Oscar"],
+correctAnswer:"Dwight",
+Image: URL("../images/accountants.png")
 
     },
 
     {
-question ="What are Oscars brain foods?";
-answer:["Sushi & Craft Beer", "Thai Food & Spanish Reds", "Empandas & Guacamole", "Pizza Rolls and Celery"];
-correctAnswer:"Thai Food & Spanish Reds";
-Image: URL()
+question3:"What are Oscars brain foods?",
+answer:["Sushi & Craft Beer", "Thai Food & Spanish Reds", "Empandas & Guacamole", "Pizza Rolls and Celery"],
+correctAnswer:"Thai Food & Spanish Reds",
+Image: URL("../images/oscar.jpeg")
 
     },
 
     {
-question ="What is the name of Toby's True Crime Podcast?";
-answer:["Toby Tells All", "My Name is George", "The Flederson Files", "Stolen Innocence: The Scraton Strangler"];
-correctAnswer:"The Flederson Files";
-Image: URL()
+question4:"What is the name of Toby's True Crime Podcast?",
+answer:["Toby Tells All", "My Name is George", "The Flederson Files", "Stolen Innocence: The Scraton Strangler"],
+correctAnswer:"The Flederson Files",
+Image: URL("../images/Toby.jpeg")
 
     },
 
     {
-question ="In Threat Level Midnight'how many times does Michael Scran say he is going to toss the coin to determine whether he take the mission from the president?'";
-answer:["15", "Brushing his teeth", "7" , "22"];
-correctAnswer:"7";
-Image: URL()
+question5:"In Threat Level Midnight'how many times does Michael Scran say he is going to toss the coin to determine whether he take the mission from the president?'",
+answer:["15", "Brushing his teeth", "7" , "22"],
+correctAnswer:"7",
+Image: URL("../images/Threat-Level-Midnight.jpg")
 
     },
 
     {
-question ="What ingredient should one undercook to make the perfect Malone chili?";
-answer:["The Hamburger Meat", "The Tomatoes", "The Stock", "The Onions"];
-correctAnswer:"The Onions";
-Image: URL()
+question6:"What ingredient should one undercook to make the perfect Malone chili?",
+answer:["The Hamburger Meat", "The Tomatoes", "The Stock", "The Onions"],
+correctAnswer:"The Onions",
+Image: URL("../images/Kevin.png")
 
     },
 
     {
-question ="Dwight Schrute plays which of the following musical instruments?";
-answer:["Harpschord", "Piano","Banjo", "Recorder"]
-correctAnswer:"Recorder"
-Image: URL()
+question7:"Dwight Schrute plays which of the following musical instruments?",
+answer:["Harpschord", "Piano","Banjo", "Recorder"],
+correctAnswer:"Recorder",
+Image: URL("../images/Dwight.jpg")
 
     },
 
     {
-question ="Which character is NOT chosen for Michael's basketball team in their match against the warehouse?";
-answer:["Stanley","Phyllis","Ryan","Oscar"];
-correctAnswer:"Oscar";
-Image: URL()
+question8:"Which character is NOT chosen for Michael's basketball team in their match against the warehouse?",
+answer:["Stanley","Phyllis","Ryan","Oscar"],
+correctAnswer:"Oscar",
+Image: URL("../images/MSbacketball.jpg")
 
     },
 
     {
-question ="What is the name of the Scanton Strangler?";
-answer:["Charles Walter Fink", "Douglas Lyle Goggins","George Howard Skub", "Albert Henry DeSalvo"];
-correctAnswer:"George Howard Skub";
-Image: URL()
+question9:"What is the name of the Scanton Strangler?",
+answer:["Charles Walter Fink", "Douglas Lyle Goggins","George Howard Skub", "Albert Henry DeSalvo"],
+correctAnswer:"George Howard Skub",
+Image: URL("../images/Toby2.jpg")
 
     },
     
     {
-question ="What is the number of Kevin invents to compensate for his accounting errors?";
-answer:["Thirtween","Slevin","Keleven","Dundereight"];
-correctAnswer:"Keleven";
-Image: URL()
+question10:"What is the number of Kevin invents to compensate for his accounting errors?",
+answer:["Thirtween","Slevin","Keleven","Dundereight"],
+correctAnswer:"Keleven",
+Image: URL("../images/KevinMalone.jpg")
 
-    },
+    }
 ]
 
-// Need a variable to track the users correct and wrong answers
-var userResults;
-// Going to need a place to link the gifs for the correct and wrong gifs
-var imagesOrGifs;
 
-// String will pop up if user gets question right ot wrong
-var thatsRight ="That's what she said"
-var thatsWrong ="That's not what she said"
-
-//Make a variable for the showing the timer on display
+//var userResults;
 //needs to be a number not a string
-var userTimer = 30;
+// Need a variable to track the users correct and wrong answers
 
-//if the user answers the wrong answer display a timer for 20 seconds
-var timeRemaining=0;
 
-//Going to need link Jquery to Html for the paragrah for the questions and to the buttons for the answers
-function triviaBoard() {
-       
-    $("#choiceA").text(choiceA);
-    $("#choiceB").text(choiceB);
-    $("#choiceC").text(choiceC);
-    $("#choiceD").text(choiceD);
-    $("#questions").text();
-    $("userTimer").text(userTimer);
-    $("imagesOrGifs").text(imagesOrGifs);
-// Going to need a place to link the gifs for the correct and wrong gifs
-};
-triviaBoard();
+
+
+
+// String will pop up if user gets question right ot wrong\
+//var thatsRight ="That's what she said"
+//var thatsWrong ="That's not what she said"
+
 
 ///Startup HW!!!!! Eric Hosted
 var game={
@@ -130,12 +114,30 @@ var game={
     //going to need comma and function() and commas
 
 
+    //Going to need a timer for each question for about 20-30 seconds
 
 countdown: function(){
     //decrement counter like -- for timer to go down from 30
+    
+    
+    var secondsLeft = 30;
     //display timer calling function to display counter
-    //run timeUp function(or make one)  on erics notes 
-
+    gameCounter(){
+        $("#userTimer").text(secondsLeft) 
+    }
+    
+    var timerId = setInterval(countdown, 1000);
+    
+    function countdown() {
+      if (secondsLeft == 0) {
+          //run timeUp function(or make one)  on erics notes 
+        clearTimeout(timerId);
+       //i think i need to put more code here so it can pop up thats wrong statements and show the gif and the prompting the next question
+      } else {
+        timeLeft--;
+        gameCounter();
+      }
+    }
 
 
 },
@@ -148,6 +150,7 @@ nextQuestion: function(){
 },
 timeUp: function(){
 
+
 },
 results: function(){
 
@@ -155,7 +158,7 @@ results: function(){
 clicked: function(){
 
 },
-answeCorrectly: function(){
+answerCorrectly: function(){
 
 },
 answerInCorrectly: function(){
@@ -173,24 +176,24 @@ $(document).on("click,") // that calls the loadQuestion function
 
 
 
-//End of Start Homework notes
+//HW SESSION END
 
 
-//Going to need a timer for each question for about 15-20 seconds
+//Going to need a timer for each question for about 20-30 seconds
 
 //NOTES TO SELF
 //<button onclick="setTimeout(myFunction, 3000)*5);"></button> (MIGHT BE GOOD TO USE FOR THE CHOICES THE USER HAS)
 //clearTimeout(myVar) (GOOD TO USE ONCE THE USER CLICKS THE RIGHT ANSWER)
-//myVar = setTimeout(myFunction, 3000) (SETS A NORMAL TIMER FOR 3 SECONDS)
+//myVar = setTimeout(myFunction, 30000) (SETS A NORMAL TIMER FOR 30 SECONDS)
 
 
 //Need to make an onclick function for when the user clicks on the buttons with if statements of === or not !==
 //make sure it is including the user is === to put including the gif make thats right! is within the timers time frame. results with go up 1
 
-//$("#choiceA").on("click",function(){}
-//$("#choiceB").on("click",function(){}
-//$("#choiceC").on("click",function(){}
-//$("#choiceD").on("click",function(){}
+//$().on("click",function(){}
+//$().on("click",function(){}
+//$().on("click",function(){}
+//$().on("click",function(){}
 
 
 
@@ -217,5 +220,20 @@ $(document).on("click,") // that calls the loadQuestion function
 //ChoicesQ9: Charles Walter Fink, Douglas Lyle Goggins,George Howard Skub, Albert Henry DeSalvo Correct Answer: George Howard Skub
 //ChoicesQ10: Thirtween,Slevin,Keleven,Dundereight Correct Answer: Keleven
 
+//if the user answers the wrong answer display a timer for 20 seconds
 
+
+//Going to need link Jquery to Html for the paragrah for the questions and to the buttons for the answers
+//function triviaBoard() {
+       
+   // $().text();
+   // $().text();
+   // $().text();
+    //$().text();
+    //$("#questions").text();
+    //$("userTimer").text(userTimer);
+    //$("imagesOrGifs").text(imagesOrGifs);
+// Going to need a place to link the gifs for the correct and wrong gifs
+//};
+//triviaBoard();
 
