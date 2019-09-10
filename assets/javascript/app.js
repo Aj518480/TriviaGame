@@ -1,4 +1,4 @@
-$( document ).ready();{
+var timer;
 //Make vars to put in the buttons, to make the user choose different answers
 var choiceA;
 var choiceB;
@@ -7,16 +7,87 @@ var choiceD;
 
 //Make a var for each question so make each a var to be a string
 // Need to figure out to connect the right answers to the question variable
-var questionOne ="What is Gabe's Middle Name?";
-var questionTwo ="Who is the Office Notary?";
-var questionThree ="What are Oscars brain foods?";
-var questionFour ="What is the name of Toby's True Crime Podcast?";
-var questionFive ="In Threat Level Midnight'how many times does Michael Scran say he is going to toss the coin to determine whether he take the mission from the president?'";
-var questionSix ="What ingredient should one undercook to make the perfect Malone chili?";
-var questionSeven ="Dwight Schrute plays which of the following musical instruments?";
-var questionEight ="Which character is NOT chosen for Michael's basketball team in their match against the warehouse?";
-var questionNine ="What is the name of the Scanton Strangler?";
-var questionTen ="What is the number of Kevin invents to compensate for his accounting errors?";
+var questions=[
+    {
+question:"What is Gabe's Middle Name?";
+answer:["Sam","Susan","Seth","Sharon"];
+correctAnswer:"Susan";
+Image: URL()
+
+    },
+
+    {
+question ="Who is the Office Notary?";
+answer:["Toby","Angela","Dwight,Oscar"];
+correctAnswer:"Dwight";
+Image: URL()
+
+    },
+
+    {
+question ="What are Oscars brain foods?";
+answer:["Sushi & Craft Beer", "Thai Food & Spanish Reds", "Empandas & Guacamole", "Pizza Rolls and Celery"];
+correctAnswer:"Thai Food & Spanish Reds";
+Image: URL()
+
+    },
+
+    {
+question ="What is the name of Toby's True Crime Podcast?";
+answer:["Toby Tells All", "My Name is George", "The Flederson Files", "Stolen Innocence: The Scraton Strangler"];
+correctAnswer:"The Flederson Files";
+Image: URL()
+
+    },
+
+    {
+question ="In Threat Level Midnight'how many times does Michael Scran say he is going to toss the coin to determine whether he take the mission from the president?'";
+answer:["15", "Brushing his teeth", "7" , "22"];
+correctAnswer:"7";
+Image: URL()
+
+    },
+
+    {
+question ="What ingredient should one undercook to make the perfect Malone chili?";
+answer:["The Hamburger Meat", "The Tomatoes", "The Stock", "The Onions"];
+correctAnswer:"The Onions";
+Image: URL()
+
+    },
+
+    {
+question ="Dwight Schrute plays which of the following musical instruments?";
+answer:["Harpschord", "Piano","Banjo", "Recorder"]
+correctAnswer:"Recorder"
+Image: URL()
+
+    },
+
+    {
+question ="Which character is NOT chosen for Michael's basketball team in their match against the warehouse?";
+answer:["Stanley","Phyllis","Ryan","Oscar"];
+correctAnswer:"Oscar";
+Image: URL()
+
+    },
+
+    {
+question ="What is the name of the Scanton Strangler?";
+answer:["Charles Walter Fink", "Douglas Lyle Goggins","George Howard Skub", "Albert Henry DeSalvo"];
+correctAnswer:"George Howard Skub";
+Image: URL()
+
+    },
+    
+    {
+question ="What is the number of Kevin invents to compensate for his accounting errors?";
+answer:["Thirtween","Slevin","Keleven","Dundereight"];
+correctAnswer:"Keleven";
+Image: URL()
+
+    },
+]
 
 // Need a variable to track the users correct and wrong answers
 var userResults;
@@ -29,7 +100,7 @@ var thatsWrong ="That's not what she said"
 
 //Make a variable for the showing the timer on display
 //needs to be a number not a string
-var userTimer = 0;
+var userTimer = 30;
 
 //if the user answers the wrong answer display a timer for 20 seconds
 var timeRemaining=0;
@@ -48,6 +119,61 @@ function triviaBoard() {
 };
 triviaBoard();
 
+///Startup HW!!!!! Eric Hosted
+var game={
+    question:questions,
+    counter: countStartNumber,
+    correct: 0,
+    incorrect: 0,
+
+    //#3 on notes start up game notes(creating the game for the startup)
+    //going to need comma and function() and commas
+
+
+
+countdown: function(){
+    //decrement counter like -- for timer to go down from 30
+    //display timer calling function to display counter
+    //run timeUp function(or make one)  on erics notes 
+
+
+
+},
+
+loadQuestion: function(){
+
+},
+nextQuestion: function(){
+
+},
+timeUp: function(){
+
+},
+results: function(){
+
+},
+clicked: function(){
+
+},
+answeCorrectly: function(){
+
+},
+answerInCorrectly: function(){
+
+},
+reset: function(){
+
+},
+
+}
+
+$(document).on("click,") //that calls to reset
+$(document).on("click,")//that calls the clicked function
+$(document).on("click,") // that calls the loadQuestion function
+
+
+
+//End of Start Homework notes
 
 
 //Going to need a timer for each question for about 15-20 seconds
@@ -93,4 +219,3 @@ triviaBoard();
 
 
 
-}
