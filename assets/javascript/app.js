@@ -19,7 +19,7 @@ Image: "../images/gabe.jpeg",
 
     {
 question:"Who is the Office Notary?",
-answer:["Toby","Angela","Dwight,Oscar"],
+answer:["Toby","Angela","Dwight","Oscar"],
 correctAnswer:"Dwight",
 Image: "../images/accountants.png"
 
@@ -93,11 +93,11 @@ Image: "../images/KevinMalone.jpg"
 
 ///Startup HW!!!!! Eric Hosted
 var game={
-    gameQuestions:question,
-    counter: 30,
+    question:gameQuestions,
+    counter: 10,
     correct: 0,
     incorrect: 0,
-
+    currentQuestion:0,
     //#3 on notes start up game notes(creating the game for the startup)
     //going to need comma and function() and commas
 
@@ -106,30 +106,43 @@ var game={
 
 countdown: function(){
     //decrement counter like -- for timer to go down from 30
-    
-    //display timer calling function to display counter
-
     game.counter--;
-        $("#userTimer").text(game.counter);
-      if (game.counter == 0) {
+    //display timer calling function to display counter
+    $("#timer").text(game.counter);
+    //check if timer is done
+    if (game.counter === 0) {
           //run timeUp function(or make one)  
-        clearTimeout(game.counter);
+        clearInterval(timer);
        //i think i need to put more code here so it can pop up thats wrong statements and show the gif and the prompting the next question
-      }
+       game.nextQuestion();
+    }
     
 },
 
 loadQuestion: function(){
-    timer = setInterval(countdown, 1000);
-    for (var i = 0; i < questions.length; i++) {
-       // ().append();
-        
+    //make sure we are clicking thr button
+    console.log("start clicked")
+    //setinterval that actually calls the countdown
+    timer = setInterval(game.countdown, 1000);
+    //show the question
+    $("#game").html("<h2>"+ gameQuestions[game.currentQuestion].question + "</h2>");
+    //loop over questions and display one on the pg
+    for (var i = 0; i < gameQuestions[game.currentQuestion].answer.length; i++) {
+        // going to neeed to make the buttons when clicked to do something
+       $("#game").append("<button class='answerBtn' data="+gameQuestions[game.currentQuestion].answer[i]+">"+ gameQuestions[game.currentQuestion].answer[i]+"</button>")
+
+       
+       //how will it know when that one is clicked it is the right one?
+       //if statements? 
         
     }
 
 },
 nextQuestion: function(){
-
+    game.counter=10;
+    $("#timer").text(game.counter);
+    game.currentQuestion++;
+    game.loadQuestion();
 },
 timeUp: function(){
 clearTimeout();
@@ -154,10 +167,10 @@ reset: function(){
 
 }
 //game.countdown();
-setInterval(game.countdown, 1000);
+// setInterval(game.countdown, 1000);
 //$(document).on("click,") //that calls to reset
 //$(document).on("click,")//that calls the clicked function
-//$(document).on("click,") // that calls the loadQuestion function
+$(document).on("click",".start", game.loadQuestion) // that calls the loadQuestion function
 
 
 
